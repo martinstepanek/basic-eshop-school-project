@@ -27,9 +27,9 @@ namespace BasicEshop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContextPool<BasicEshopDbContext>(options => options
-                .UseMySql("Server=mysql;Database=basic_eshop;User=root;Password=;", mySqlOptions => mySqlOptions
-                    .ServerVersion(new Version(5, 7, 0), ServerType.MySql)
+            services.AddDbContextPool<DatabaseContext>(options => options
+                .UseMySql("Server=localhost;Database=basic_eshop;User=root;Password=;", mySqlOptions => mySqlOptions
+                    .ServerVersion(new Version(5, 7, 28), ServerType.MySql)
                 ));
         }
 
