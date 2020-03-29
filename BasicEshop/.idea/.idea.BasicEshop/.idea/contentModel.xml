@@ -10,10 +10,25 @@
           <e p="HomeController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Customer.cs" t="Include" />
-          <e p="DatabaseContext.cs" t="Include" />
+          <e p="Database" t="Include">
+            <e p="DatabaseContext.cs" t="Include" />
+          </e>
+          <e p="Entities" t="Include">
+            <e p="Article.cs" t="Include" />
+            <e p="ArticleComment.cs" t="Include" />
+            <e p="Category.cs" t="Include" />
+            <e p="Customer.cs" t="Include" />
+            <e p="Order.cs" t="Include" />
+            <e p="OrderHasProduct.cs" t="Include" />
+            <e p="Product.cs" t="Include" />
+            <e p="ProductHasTag.cs" t="Include" />
+            <e p="ProductImage.cs" t="Include" />
+            <e p="ProductUnitHistory.cs" t="Include" />
+            <e p="Review.cs" t="Include" />
+            <e p="Seller.cs" t="Include" />
+            <e p="User.cs" t="Include" />
+          </e>
           <e p="ErrorViewModel.cs" t="Include" />
-          <e p="User.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">

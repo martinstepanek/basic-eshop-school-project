@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using BasicEshop.Models;
+using BasicEshop.Models.Database;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BasicEshop.Controllers
 {
@@ -15,8 +16,6 @@ namespace BasicEshop.Controllers
 
         public IActionResult Index()
         {
-            _context.Users.Add(new User());
-            _context.SaveChanges();
             return View();
         }
 
