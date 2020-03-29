@@ -15,7 +15,7 @@ namespace BasicEshop.Models.Entities
         public ProductUnitHistory ProductUnitHistory { get; set; }
 
         [Required]
-        [Column(TypeName = "Money")]
+        [Column(TypeName = "DECIMAL(13,2)")]
         public decimal PriceTotal { get; set; }
     }
 }

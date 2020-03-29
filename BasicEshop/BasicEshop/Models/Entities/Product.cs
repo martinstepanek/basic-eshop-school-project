@@ -19,10 +19,10 @@ namespace BasicEshop.Models.Entities
         [Required] public string Description { get; set; }
 
         [Required]
-        [Column(TypeName = "Money")]
+        [Column(TypeName = "DECIMAL(13,2)")]
         public decimal Price { get; set; }
         
-        [Column(TypeName = "Money")] public decimal PriceOld { get; set; }
+        [Column(TypeName = "DECIMAL(13,2)")] public decimal PriceOld { get; set; }
         [Required] public DateTime CreatedAt { get; set; }
 
         public ICollection<ProductImage> Images { get; set; }
