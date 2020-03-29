@@ -9,7 +9,9 @@ namespace BasicEshop.Models.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string OderHasProductId { get; set; }
 
-        [ForeignKey("OrderId")] [Required] public Order Order { get; set; }
+        public string OrderId { get; set; }
+
+        public Order Order { get; set; }
 
         public string ProductUnitHistoryId { get; set; }
         public ProductUnitHistory ProductUnitHistory { get; set; }

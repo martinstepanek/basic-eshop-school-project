@@ -83,6 +83,10 @@ namespace BasicEshop.Models.Database
                 .HasOne(history => history.OrderHasProduct)
                 .WithOne(product => product.ProductUnitHistory);
 
+            modelBuilder.Entity<Order>()
+                .HasMany(order => order.Products)
+                .WithOne(product => product.Order);
+
             Seed(modelBuilder);
         }
 
