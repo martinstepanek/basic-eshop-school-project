@@ -1,0 +1,94 @@
+user
+ user_id
+ customer_id
+ email
+ password_hash
+ access (user|admin)
+ 
+customer
+ customer_id
+ first_name
+ last_name
+ contact_email
+ address
+ city
+ country
+ zip_code
+
+category
+ category_id
+ parent_id
+ name
+ 
+seller
+ seller_id
+ name
+ 
+product
+ product_id
+ category_id
+ seller_id
+ title
+ description
+ price
+ price_old
+ created_at
+ 
+product_has_image
+ product_has_image_id
+ product_id
+ file_name
+ 
+product_has_unit_history
+ product_has_unit_history_id
+ product_id
+ number
+ description
+ created_at
+
+product_has_tag
+ product_has_tag_id
+ product_id
+ name
+ 
+review
+ review_id
+ user_id
+ product_id
+ stars
+ content
+ created_at
+ 
+order
+ order_id
+ customer_id
+ first_name
+ last_name
+ contact_email
+ address
+ city
+ country
+ zip_code
+ created_at
+ 
+order_has_product
+ order_has_product_id
+ order_id
+ product_unit_history_id
+ price_total
+ 
+article
+ article_id
+ user_id
+ title
+ url
+ content
+ featured_image_file_name
+ published_at
+ 
+article_comment
+ article_comment_id
+ article_id
+ user_id
+ content
+ created_at

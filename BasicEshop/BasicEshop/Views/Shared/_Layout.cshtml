@@ -4,12 +4,55 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - BasicEshop</title>
-    <link rel="stylesheet" href="~/scss/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
+    <div class="header-top container">
+        <div class="header-top-side">
+            <div class="header-socials">
+                Follow Us:
+                <ul>
+                    <li>
+                        <i class="fab fa-facebook-f"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-twitter"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-youtube"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-my-account">
+                My Account <i class="fas fa-angle-down"></i>
+            </div>
+        </div>
+        <div class="header-top-main">
+            <img src="~/img/logo-white.png" alt="Logo" class="header-logo"/>
+            <div class="header-cart">
+                <div class="header-cart-inner">
+                    <i class="fas fa-shopping-cart"></i>
+                    <div class="header-cart-number">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <nav>
-
+        <ul>
+            <li>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="" asp-action="">Products</a>
+                <a asp-controller="" asp-action="">Blog</a>
+                <a asp-controller="" asp-action="">About</a>
+                <a asp-controller="" asp-action="">Contact</a>
+            </li>
+        </ul>
     </nav>
 </header>
 <section>

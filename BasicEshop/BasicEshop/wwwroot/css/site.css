@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+a:hover {
+  color: #FF9999;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header {
+  font-size: 14px;
+  color: white;
+}
+header .header-top {
+  background-color: #FF9999;
+  /*    @include media-breakpoint-up(sm) {
+
+      }*/
+}
+header .header-top .header-top-side .header-socials, header .header-top .header-top-side .header-my-account {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+header .header-top .header-top-side .header-socials ul {
+  padding: 0;
+  list-style-type: none;
+  display: inline;
+}
+header .header-top .header-top-side .header-socials ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+header .header-top .header-top-main {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-top .header-top-main .header-logo {
+  width: 150px;
+}
+header .header-top .header-top-main .header-cart {
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 5px;
+  padding: 8px 8px;
+  font-size: 24px;
+  display: inline-block;
+}
+header .header-top .header-top-main .header-cart .header-cart-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-top .header-top-main .header-cart .header-cart-number {
+  border-radius: 50%;
+  background-color: white;
+  color: #333333;
+  width: 16px;
+  height: 16px;
+  font-size: 11px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/*# sourceMappingURL=site.css.map */

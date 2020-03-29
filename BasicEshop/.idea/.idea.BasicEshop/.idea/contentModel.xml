@@ -59,7 +59,27 @@
           </e>
         </e>
         <e p="wwwroot" t="Include">
+          <e p="css" t="Include">
+            <e p="_mixins.scss" t="Include" />
+            <e p="_variables.scss" t="Include" />
+            <e p="all.min.css" t="Include" />
+            <e p="container.css" t="Include" />
+            <e p="container.css.map" t="Include" />
+            <e p="container.scss" t="Include" />
+            <e p="header.css" t="Include" />
+            <e p="header.css.map" t="Include" />
+            <e p="header.scss" t="Include" />
+            <e p="site.css" t="Include" />
+            <e p="site.css.map" t="Include" />
+            <e p="site.scss" t="Include" />
+          </e>
           <e p="favicon.ico" t="Include" />
+          <e p="img" t="Include">
+            <e p="logo-white.png" t="Include" />
+            <e p="logo.png" t="Include" />
+            <e p="slider-1.png" t="Include" />
+            <e p="slider-2.png" t="Include" />
+          </e>
           <e p="js" t="Include">
             <e p="site.js" t="Include" />
           </e>
@@ -116,10 +136,22 @@
               <e p="jquery.validate.unobtrusive.min.js" t="Include" />
             </e>
           </e>
-          <e p="scss" t="Include">
-            <e p="site.css" t="Include" />
-            <e p="site.css.map" t="Include" />
-            <e p="site.scss" t="Include" />
+          <e p="webfonts" t="Include">
+            <e p="fa-brands-400.eot" t="Include" />
+            <e p="fa-brands-400.svg" t="Include" />
+            <e p="fa-brands-400.ttf" t="Include" />
+            <e p="fa-brands-400.woff" t="Include" />
+            <e p="fa-brands-400.woff2" t="Include" />
+            <e p="fa-regular-400.eot" t="Include" />
+            <e p="fa-regular-400.svg" t="Include" />
+            <e p="fa-regular-400.ttf" t="Include" />
+            <e p="fa-regular-400.woff" t="Include" />
+            <e p="fa-regular-400.woff2" t="Include" />
+            <e p="fa-solid-900.eot" t="Include" />
+            <e p="fa-solid-900.svg" t="Include" />
+            <e p="fa-solid-900.ttf" t="Include" />
+            <e p="fa-solid-900.woff" t="Include" />
+            <e p="fa-solid-900.woff2" t="Include" />
           </e>
         </e>
       </e>

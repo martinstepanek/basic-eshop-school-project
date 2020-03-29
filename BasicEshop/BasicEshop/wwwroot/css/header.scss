@@ -1,0 +1,72 @@
+header {
+  font-size: 14px;
+  color: white;
+
+  .header-top {
+    background-color: $primary;
+
+    .header-top-side {
+      .header-socials, .header-my-account {
+        text-align: center;
+        border-bottom: 1px solid $gray2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .header-socials ul {
+        padding: 0;
+        list-style-type: none;
+        display: inline;
+
+        li {
+          display: inline-block;
+          padding: 0 10px;
+        }
+      }
+    }
+
+    .header-top-main {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .header-logo {
+        width: 150px;
+      }
+
+      .header-cart {
+        border: 1px solid $gray2;
+        border-radius: 5px;
+        padding: 8px 8px;
+        font-size: 24px;
+        display: inline-block;
+
+        .header-cart-inner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+
+        .header-cart-number {
+          border-radius: 50%;
+          background-color: white;
+          color: $black;
+          width: 16px;
+          height: 16px;
+          font-size: 11px;
+          text-align: center;
+          display: inline-block;
+          margin-left: 5px
+        }
+      }
+    }
+
+    /*    @include media-breakpoint-up(sm) {
+    
+        }*/
+
+  }
+}
