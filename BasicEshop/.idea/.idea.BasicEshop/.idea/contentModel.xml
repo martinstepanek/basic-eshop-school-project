@@ -59,9 +59,6 @@
           </e>
         </e>
         <e p="wwwroot" t="Include">
-          <e p="css" t="Include">
-            <e p="site.css" t="Include" />
-          </e>
           <e p="favicon.ico" t="Include" />
           <e p="js" t="Include">
             <e p="site.js" t="Include" />
@@ -118,6 +115,11 @@
               <e p="jquery.validate.unobtrusive.js" t="Include" />
               <e p="jquery.validate.unobtrusive.min.js" t="Include" />
             </e>
+          </e>
+          <e p="scss" t="Include">
+            <e p="site.css" t="Include" />
+            <e p="site.css.map" t="Include" />
+            <e p="site.scss" t="Include" />
           </e>
         </e>
       </e>
