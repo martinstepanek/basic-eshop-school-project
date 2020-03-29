@@ -2,6 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>8.0</LangVersion>
+        <WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
