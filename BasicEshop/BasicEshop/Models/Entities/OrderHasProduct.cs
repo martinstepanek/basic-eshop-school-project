@@ -14,6 +14,8 @@ namespace BasicEshop.Models.Entities
         public string ProductUnitHistoryId { get; set; }
         public ProductUnitHistory ProductUnitHistory { get; set; }
 
-        [Required] public double PriceTotal { get; set; }
+        [Required]
+        [Column(TypeName = "Money")]
+        public decimal PriceTotal { get; set; }
     }
 }

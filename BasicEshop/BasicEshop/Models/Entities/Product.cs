@@ -17,8 +17,12 @@ namespace BasicEshop.Models.Entities
         public Seller Seller { get; set; }
         [Required] public string Title { get; set; }
         [Required] public string Description { get; set; }
-        [Required] public double Price { get; set; }
-        public double PriceOld { get; set; }
+
+        [Required]
+        [Column(TypeName = "Money")]
+        public decimal Price { get; set; }
+        
+        [Column(TypeName = "Money")] public decimal PriceOld { get; set; }
         [Required] public DateTime CreatedAt { get; set; }
 
         public ICollection<ProductImage> Images { get; set; }
