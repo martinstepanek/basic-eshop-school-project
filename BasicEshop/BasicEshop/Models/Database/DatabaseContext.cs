@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using BasicEshop.Models.Entities;
+using Bogus;
 using Microsoft.EntityFrameworkCore;
 
 namespace BasicEshop.Models.Database
@@ -80,6 +82,29 @@ namespace BasicEshop.Models.Database
             modelBuilder.Entity<ProductUnitHistory>()
                 .HasOne(history => history.OrderHasProduct)
                 .WithOne(product => product.ProductUnitHistory);
+
+            Seed(modelBuilder);
+        }
+
+        private void Seed(ModelBuilder modelBuilder)
+        {
+            List<Customer> customers = new List<Customer>();
+            for (int i = 0; i < 5; i++)
+            {
+                customers.Add(
+                    new Faker<Customer>()
+                        .RuleFor(c => c.CustomerId, (f, c) => f.Random.Uuid().ToString())
+                        .RuleFor(c => c.FirstName, (f, c) => f.Name.FirstName())
+                        .RuleFor(c => c.LastName, (f, c) => f.Name.LastName())
+                        .RuleFor(c => c.ContactEmail, (f, c) => f.Internet.Email(c.FirstName, c.LastName))
+                        .RuleFor(c => c.Address, (f, c) => f.Address.StreetAddress())
+                        .RuleFor(c => c.City, (f, c) => f.Address.City())
+                        .RuleFor(c => c.Country, (f, c) => f.Address.Country())
+                        .RuleFor(c => c.ZipCode, (f, c) => f.Address.ZipCode())
+                );
+            }
+
+            modelBuilder.Entity<Customer>().HasData(customers);
         }
     }
 }
