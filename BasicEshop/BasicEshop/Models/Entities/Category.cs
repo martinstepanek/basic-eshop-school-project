@@ -10,8 +10,9 @@ namespace BasicEshop.Models.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string CategoryId { get; set; }
 
-        public string ParentId { get; set; }
-        public Category Parent { get; set; }
+        public string? ParentId { get; set; }
+        public Category? Parent { get; set; }
+        public ICollection<Category>? Children { get; set; }
 
         [Required] public string Name { get; set; }
         public ICollection<Product> Products { get; set; }

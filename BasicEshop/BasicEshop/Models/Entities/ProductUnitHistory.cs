@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,7 +14,7 @@ namespace BasicEshop.Models.Entities
         public Product Product { get; set; }
         [Required] public int Number { get; set; }
         [Required] public string Description { get; set; }
-
+        [Required] public DateTime CreatedAt { get; set; }
         public OrderHasProduct OrderHasProduct { get; set; }
     }
 }
