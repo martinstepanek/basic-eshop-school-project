@@ -19,7 +19,7 @@ namespace BasicEshop.Models.Database
         public DbSet<Category> Categories { get; set; }
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ProductHasImage> ProductHasImages { get; set; }
         public DbSet<ProductUnitHistory> ProductUnitHistories { get; set; }
         public DbSet<ProductHasTag> ProductHasTags { get; set; }
         public DbSet<Review> Reviews { get; set; }
@@ -27,6 +27,7 @@ namespace BasicEshop.Models.Database
         public DbSet<OrderHasProduct> OrderHasProducts { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<ArticleComment> ArticleComments { get; set; }
+        public DbSet<Image> Images { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,18 +37,16 @@ namespace BasicEshop.Models.Database
             modelBuilder.Entity<Seller>()
                 .HasIndex(seller => seller.Name)
                 .IsUnique();
-            modelBuilder.Entity<ProductImage>()
-                .HasIndex(productImage => productImage.FileName)
-                .IsUnique();
             modelBuilder.Entity<ProductHasTag>()
                 .HasIndex(tag => tag.Name)
                 .IsUnique();
             modelBuilder.Entity<Article>()
                 .HasIndex(article => article.Url)
                 .IsUnique();
-            modelBuilder.Entity<Article>()
-                .HasIndex(article => article.FeaturedImageFileName)
-                .IsUnique();
+            // TODO: uncomment with real data
+            /*modelBuilder.Entity<Image>()
+                .HasIndex(image => image.FileName)
+                .IsUnique();*/
 
             modelBuilder.Entity<User>()
                 .HasMany(user => user.Articles)
@@ -59,6 +58,8 @@ namespace BasicEshop.Models.Database
             modelBuilder.Entity<Article>()
                 .HasMany(article => article.Comments)
                 .WithOne(comment => comment.Article);
+            modelBuilder.Entity<Article>()
+                .HasOne(article => article.FeaturedImage);
 
             modelBuilder.Entity<Customer>()
                 .HasOne(customer => customer.User)
@@ -72,7 +73,7 @@ namespace BasicEshop.Models.Database
                 .WithMany()
                 .HasForeignKey(category => category.ParentId);
 
-                modelBuilder.Entity<Product>()
+            modelBuilder.Entity<Product>()
                 .HasMany(product => product.Images)
                 .WithOne(image => image.Product);
             modelBuilder.Entity<Product>()
@@ -89,6 +90,9 @@ namespace BasicEshop.Models.Database
                 .HasOne(history => history.OrderHasProduct)
                 .WithOne(product => product.ProductUnitHistory);
 
+            modelBuilder.Entity<ProductHasImage>()
+                .HasOne(productHasImage => productHasImage.Image);
+
             modelBuilder.Entity<Order>()
                 .HasMany(order => order.Products)
                 .WithOne(product => product.Order);
@@ -102,6 +106,7 @@ namespace BasicEshop.Models.Database
             const int numberOfProducts = 100;
             const int numberOfOrders = 30;
             const int numberOfArticles = 30;
+            const int numberOfImages = 1000;
 
             var testCustomers = new Faker<Customer>()
                 .RuleFor(c => c.CustomerId, (f, c) => f.Random.Uuid().ToString())
@@ -149,12 +154,18 @@ namespace BasicEshop.Models.Database
             List<Product> products = testProducts.Generate(numberOfProducts);
             modelBuilder.Entity<Product>().HasData(products);
 
-            var testProductImages = new Faker<ProductImage>()
-                .RuleFor(p => p.ProductImageId, (f, p) => f.Random.Uuid().ToString())
+            var testImages = new Faker<Image>()
+                .RuleFor(i => i.ImageId, (f, p) => f.Random.Uuid().ToString())
+                .RuleFor(i => i.FileName, (f, p) => f.Image.PicsumUrl());
+            List<Image> images = testImages.Generate(numberOfImages);
+            modelBuilder.Entity<Image>().HasData(images);
+            
+            var testProductImages = new Faker<ProductHasImage>()
+                .RuleFor(p => p.ProductHasImageId, (f, p) => f.Random.Uuid().ToString())
                 .RuleFor(p => p.ProductId, (f, p) => f.PickRandom(products).ProductId)
-                .RuleFor(p => p.FileName, (f, p) => f.Image.PicsumUrl());
-            List<ProductImage> productImages = testProductImages.Generate(numberOfProducts * 6);
-            modelBuilder.Entity<ProductImage>().HasData(productImages);
+                .RuleFor(p => p.ImageId, (f, p) => f.PickRandom(images).ImageId);
+            List<ProductHasImage> productImages = testProductImages.Generate(numberOfProducts * 6);
+            modelBuilder.Entity<ProductHasImage>().HasData(productImages);
 
             var testProductUnitHistory = new Faker<ProductUnitHistory>()
                 .RuleFor(p => p.ProductUnitHistoryId, (f, p) => f.Random.Uuid().ToString())
@@ -213,17 +224,18 @@ namespace BasicEshop.Models.Database
                     (f, o) => productUnitHistoriesToOrder[f.IndexFaker].ProductUnitHistoryId)
                 .RuleFor(o => o.PriceTotal,
                     (f, o) => productUnitHistoriesToOrder[f.IndexFaker].Number * -1 * products
-                        .Find(x => x.ProductId == productUnitHistoriesToOrder[f.IndexFaker].ProductId)!.Price);
+                            .Find(x => x.ProductId == productUnitHistoriesToOrder[f.IndexFaker].ProductId)!
+                        .Price);
             List<OrderHasProduct> orderHasProducts = testOrderHasProducts.Generate(numberOfOrders);
             modelBuilder.Entity<OrderHasProduct>().HasData(orderHasProducts);
-            
+
             var testArticles = new Faker<Article>()
                 .RuleFor(a => a.ArticleId, (f, a) => f.Random.Uuid().ToString())
                 .RuleFor(a => a.UserId, (f, a) => f.PickRandom(users).UserId)
                 .RuleFor(a => a.Title, (f, a) => String.Join(" ", f.Lorem.Words()))
                 .RuleFor(a => a.Url, (f, a) => f.Lorem.Slug())
                 .RuleFor(a => a.Content, (f, a) => f.Lorem.Paragraphs(5))
-                .RuleFor(a => a.FeaturedImageFileName, (f, a) => f.Image.PicsumUrl())
+                .RuleFor(a => a.FeaturedImageId, (f, p) => f.PickRandom(images).ImageId)
                 .RuleFor(a => a.PublishedAt, (f, a) => f.Date.Past());
             List<Article> articles = testArticles.Generate(numberOfArticles);
             modelBuilder.Entity<Article>().HasData(articles);

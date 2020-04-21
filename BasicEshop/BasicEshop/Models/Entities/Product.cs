@@ -25,7 +25,7 @@ namespace BasicEshop.Models.Entities
         [Column(TypeName = "DECIMAL(13,2)")] public decimal PriceOld { get; set; }
         [Required] public DateTime CreatedAt { get; set; }
 
-        public ICollection<ProductImage> Images { get; set; }
+        public ICollection<ProductHasImage> Images { get; set; }
         public ICollection<ProductUnitHistory> UnitHistories { get; set; }
         public ICollection<ProductHasTag> Tags { get; set; }
         public ICollection<Review> Reviews { get; set; }
