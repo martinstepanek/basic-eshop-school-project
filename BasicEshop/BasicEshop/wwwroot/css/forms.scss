@@ -1,0 +1,13 @@
+.form-control {
+  border: 1px solid $gray2;
+  transition: all 0.2s ease-out;
+  padding: 13px 11px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: $font-family;
+  
+  &:focus {
+    border-color: $primary;
+    outline: 0;
+  }
+}

@@ -1,4 +1,9 @@
 .container {
   padding-left: 15px;
   padding-right: 15px;
+
+  @include media-breakpoint-up(xl) {
+    max-width: map_get($grid-breakpoints, xl) - (2 * 15px);
+    margin: auto;
+  }
 }

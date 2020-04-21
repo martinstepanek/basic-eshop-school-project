@@ -6,11 +6,22 @@ header {
     background-color: $primary;
 
     .header-top-side {
+
+      @include media-breakpoint-up(sm) {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $gray3;
+      }
+
       .header-socials, .header-my-account {
         text-align: center;
-        border-bottom: 1px solid $gray2;
+        border-bottom: 1px solid $gray3;
         padding-top: 10px;
         padding-bottom: 10px;
+
+        @include media-breakpoint-up(sm) {
+          border-bottom: 0;
+        }
       }
 
       .header-socials ul {
@@ -31,17 +42,27 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+
+      @include media-breakpoint-up(md) {
+        flex-wrap: nowrap;
+      }
 
       .header-logo {
         width: 150px;
       }
 
       .header-cart {
-        border: 1px solid $gray2;
+        border: 1px solid $gray3;
         border-radius: 5px;
         padding: 8px 8px;
         font-size: 24px;
         display: inline-block;
+        color: white;
+
+        @include media-breakpoint-up(md) {
+          order: 1;
+        }
 
         .header-cart-inner {
           display: flex;
@@ -62,11 +83,56 @@ header {
           margin-left: 5px
         }
       }
+
+      form {
+        width: 100%;
+        margin-top: 25px;
+
+        @include media-breakpoint-up(md) {
+          padding: 0 15px;
+          margin-top: 0;
+          max-width: 650px;
+        }
+
+        .search-control {
+          color: white;
+          background-color: rgba(255, 255, 255, 0.2);
+          border: 0;
+          width: 100%;
+          padding-left: 20px;
+          padding-right: 20px;
+
+          &::placeholder {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  nav {
+    &.container {
+      @include media-breakpoint-up(sm) {
+        max-width: map-get($grid-breakpoints, sm) - (2 * 15px);
+        margin: auto;
+      }
     }
 
-    /*    @include media-breakpoint-up(sm) {
-    
-        }*/
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+    }
 
+    a {
+      display: inline-block;
+      font-weight: 600;
+      padding: 15px 0;
+
+      @include media-breakpoint-up(md) {
+        padding: 20px 0;
+      }
+    }
   }
 }
