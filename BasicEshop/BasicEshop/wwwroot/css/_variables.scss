@@ -2,7 +2,8 @@ $primary: #FF9999;
 $black: #333333;
 
 $gray1: #f0f0f0;
-$gray2: rgba(255, 255, 255, .17);
+$gray2: #d9d9d9;
+$gray3: rgba(255, 255, 255, .17);
 
 
 $grid-breakpoints: (
@@ -12,3 +13,5 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 ) !default;
+
+$font-family: 'Lato', sans-serif;

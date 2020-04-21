@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BasicEshop.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private DatabaseContext _context;
 

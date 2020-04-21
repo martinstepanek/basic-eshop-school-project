@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model BasicEshop.Models.Forms.SearchForm;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -10,8 +12,8 @@
 </head>
 <body>
 <header>
-    <div class="header-top container">
-        <div class="header-top-side">
+    <div class="header-top">
+        <div class="header-top-side container">
             <div class="header-socials">
                 Follow Us:
                 <ul>
@@ -33,23 +35,35 @@
                 My Account <i class="fas fa-angle-down"></i>
             </div>
         </div>
-        <div class="header-top-main">
+        <div class="header-top-main container">
             <img src="~/img/logo-white.png" alt="Logo" class="header-logo"/>
-            <div class="header-cart">
+            <a class="header-cart">
                 <div class="header-cart-inner">
                     <i class="fas fa-shopping-cart"></i>
                     <div class="header-cart-number">0</div>
                 </div>
-            </div>
+            </a>
+            @using (Html.BeginForm("Search", "Product", FormMethod.Post))
+            {
+                @Html.TextBoxFor(m => m.Search, new {@class = "form-control search-control", placeholder = "Search our store"})
+            }
         </div>
     </div>
-    <nav>
+    <nav class="container">
         <ul>
             <li>
                 <a asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
                 <a asp-controller="" asp-action="">Products</a>
-                <a asp-controller="" asp-action="">Blog</a>
+            </li>
+            <li>
+                <a asp-controller="Blog" asp-action="Index">Blog</a>
+            </li>
+            <li>
                 <a asp-controller="" asp-action="">About</a>
+            </li>
+            <li>
                 <a asp-controller="" asp-action="">Contact</a>
             </li>
         </ul>
