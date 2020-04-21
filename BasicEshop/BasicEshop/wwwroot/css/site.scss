@@ -23,7 +23,9 @@ a {
   }
 }
 
-@import "container";
-@import "forms";
+@import "components/container";
+@import "components/forms";
 
-@import "header";
+@import "components/header";
+
+@import "pages/blog/index";
