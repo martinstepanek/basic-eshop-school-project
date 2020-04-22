@@ -1,0 +1,54 @@
+
+.blog-detail {
+  .article-detail {
+    border: 1px solid $gray2;
+    padding: 25px;
+    margin-bottom: 30px;
+
+    h1 {
+      text-align: center;
+    }
+
+    .article-image {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(sm) {
+        height: 260px;
+      }
+      @include media-breakpoint-up(md) {
+        height: 350px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 450px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 400px;
+      }
+    }
+
+    .article-info {
+      padding-top: 20px;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+
+  .article-comments {
+    .comment {
+      padding: 25px;
+      border: 1px solid $gray2;
+
+      .comment-info {
+        padding-bottom: 20px;
+      }
+      
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

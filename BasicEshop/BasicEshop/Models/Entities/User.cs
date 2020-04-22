@@ -23,5 +23,6 @@ namespace BasicEshop.Models.Entities
         public UserAccess Access { get; set; } = UserAccess.User;
         public ICollection<Article> Articles { get; set; }
         public ICollection<Review> Reviews { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 }

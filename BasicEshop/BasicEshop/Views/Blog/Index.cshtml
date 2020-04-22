@@ -1,8 +1,61 @@
+@using BasicEshop.Models.Entities
 @{
     ViewBag.Title = "Blog";
 }
-<div class="container">
-    <article>
-        
-    </article>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-xl-9">
+            @if (ViewBag.Articles?.Count == 0)
+            {
+                <p>There are no articles</p>
+            }
+            else
+            {
+                foreach (Article article in ViewBag.Articles)
+                {
+                    <article class="article">
+                        @addTagHelper *, ReflectionIT.Mvc.Paging
+                        <img alt="@article?.Title" src="@article?.FeaturedImage?.FileName" class="article-image"/>
+                        <h2>@article?.Title</h2>
+                        <div class="article-info">
+                            <i class="fas fa-user-circle"></i>
+                            @article?.User?.Customer?.FullName
+                            <span class="text-muted">
+                                | <i class="fas fa-calendar-alt"></i> @article?.PublishedAt.ToString("d MMM, yy")
+                            </span>
+                        </div>
+                        <p>
+                            @article?.Content.Substring(0, 150)...
+                        </p>
+                        <a
+                            asp-action="Detail"
+                            asp-route-articleUrl="@article?.Url"
+                            class="btn btn-default text-upper">
+                            Read more
+                        </a>
+                    </article>
+                }
+
+                @if (ViewBag.Articles.HasPreviousPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(ViewBag.Articles.PageIndex - 1)"
+                       class="btn btn-default">
+                        Previous
+                    </a>
+                }
+                @if (ViewBag.Articles.HasNextPage)
+                {
+                    <a asp-action="Index"
+                       asp-route-pageNumber="@(ViewBag.Articles.PageIndex + 1)"
+                       class="btn btn-default">
+                        Next
+                    </a>
+                }
+            }
+        </div>
+        <div class="col-12 col-xl-3">
+            Search
+        </div>
+    </div>
 </div>

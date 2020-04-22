@@ -54,6 +54,9 @@ namespace BasicEshop.Models.Database
             modelBuilder.Entity<User>()
                 .HasMany(user => user.Reviews)
                 .WithOne(review => review.User);
+            modelBuilder.Entity<User>()
+                .HasMany(user => user.Images)
+                .WithOne(image => image.User);
 
             modelBuilder.Entity<Article>()
                 .HasMany(article => article.Comments)
@@ -156,6 +159,7 @@ namespace BasicEshop.Models.Database
 
             var testImages = new Faker<Image>()
                 .RuleFor(i => i.ImageId, (f, p) => f.Random.Uuid().ToString())
+                .RuleFor(i => i.UserId, (f, p) => f.PickRandom(users).UserId)
                 .RuleFor(i => i.FileName, (f, p) => f.Image.PicsumUrl());
             List<Image> images = testImages.Generate(numberOfImages);
             modelBuilder.Entity<Image>().HasData(images);

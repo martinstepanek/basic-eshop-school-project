@@ -8,12 +8,13 @@
     <title>@ViewData["Title"] - BasicEshop</title>
     <link rel="stylesheet" href="~/css/site.css"/>
     <link rel="stylesheet" href="~/css/all.min.css"/>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header-top">
-        <div class="header-top-side container">
+        <div class="header-top-side container-fluid">
             <div class="header-socials">
                 Follow Us:
                 <ul>
@@ -35,7 +36,7 @@
                 My Account <i class="fas fa-angle-down"></i>
             </div>
         </div>
-        <div class="header-top-main container">
+        <div class="header-top-main container-fluid">
             <img src="~/img/logo-white.png" alt="Logo" class="header-logo"/>
             <a class="header-cart">
                 <div class="header-cart-inner">
@@ -49,7 +50,7 @@
             }
         </div>
     </div>
-    <nav class="container">
+    <nav class="container-fluid">
         <ul>
             <li>
                 <a asp-controller="Home" asp-action="Index">Home</a>

@@ -10,12 +10,12 @@ header {
       @include media-breakpoint-up(sm) {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid $gray3;
+        border-bottom: 1px solid $gray5;
       }
 
       .header-socials, .header-my-account {
         text-align: center;
-        border-bottom: 1px solid $gray3;
+        border-bottom: 1px solid $gray5;
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -53,7 +53,7 @@ header {
       }
 
       .header-cart {
-        border: 1px solid $gray3;
+        border: 1px solid $gray5;
         border-radius: 5px;
         padding: 8px 8px;
         font-size: 24px;
@@ -111,7 +111,7 @@ header {
   }
 
   nav {
-    &.container {
+    &.container-fluid {
       @include media-breakpoint-up(sm) {
         max-width: map-get($grid-breakpoints, sm) - (2 * 15px);
         margin: auto;

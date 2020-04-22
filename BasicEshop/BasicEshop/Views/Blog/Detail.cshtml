@@ -1,0 +1,41 @@
+@using BasicEshop.Models.Entities
+<div class="container-fluid blog-detail">
+    <div class="row">
+        <div class="col-12 col-xl-9">
+            <article class="article-detail">
+                <h1>@ViewBag.Article.Title</h1>
+                <div class="article-info">
+                    <i class="fas fa-user-circle"></i>
+                    @ViewBag.Article.User?.Customer?.FullName
+                    <span class="text-muted">
+                        | <i class="fas fa-calendar-alt"></i> @ViewBag.Article.PublishedAt.ToString("d MMM, yy")
+                    </span>
+                </div>
+                <img alt="@ViewBag.Article.Title" src="@ViewBag.Article.FeaturedImage.FileName" class="article-image"/>
+                <div class="article-content content">
+                    @ViewBag.Article.Content
+                </div>
+            </article>
+            <div class="article-comments">
+                @foreach (ArticleComment comment in ViewBag.Article.Comments)
+                {
+                    <div class="comment">
+                        <div class="comment-info">
+                            <i class="fas fa-user-circle"></i>
+                            @comment?.User?.Customer.FullName
+                            <span class="text-muted">
+                                | <i class="fas fa-calendar-alt"></i> @comment?.CreatedAt.ToString("d MMM, yy")
+                            </span>
+                        </div>
+                        <p class="content">
+                            @comment?.Content
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-12 col-xl-3">
+            Search
+        </div>
+    </div>
+</div>

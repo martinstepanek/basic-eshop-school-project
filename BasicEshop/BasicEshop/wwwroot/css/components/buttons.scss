@@ -1,0 +1,32 @@
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  
+  &.disabled {
+    cursor: default;
+    color: black;
+  }
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: white;
+  font-weight: bold;
+
+  &:hover:not(.disabled)  {
+    background-color: $gray6;
+  }
+}
+
+.btn-default {
+  background-color: $gray1;
+  color: black;
+
+  &:hover:not(.disabled) {
+    background-color: $primary;
+    color: white;
+  }
+}

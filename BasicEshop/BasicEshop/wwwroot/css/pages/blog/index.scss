@@ -1,0 +1,33 @@
+.article {
+  margin-bottom: 40px;
+  
+  .article-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-up(sm) {
+      height: 260px;
+    }
+    @include media-breakpoint-up(md) {
+      height: 350px;
+    }
+    @include media-breakpoint-up(lg) {
+      height: 450px;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 400px;
+    }
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .article-info {
+    padding-bottom: 15px;
+    border-bottom: 1px solid $gray2;
+    margin-bottom: 20px;
+  }
+}
