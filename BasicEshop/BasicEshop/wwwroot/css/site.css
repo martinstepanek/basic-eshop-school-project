@@ -265,6 +265,19 @@ footer ul li {
   padding: 7px 0;
 }
 
+.home-about-us {
+  margin-top: 50px;
+}
+.home-about-us p {
+  line-height: 24px;
+}
+.home-about-us .about-us-top {
+  margin-bottom: 100px;
+}
+.home-about-us .about-us-block {
+  margin-bottom: 50px;
+}
+
 .blog-index .article {
   margin-bottom: 40px;
 }
