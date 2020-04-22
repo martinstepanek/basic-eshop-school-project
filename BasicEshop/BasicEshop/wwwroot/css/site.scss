@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   font-family: $font-family;
   font-size: 15px;
-  color: $gray6;
+  color: $gray7;
 }
 
 a {
@@ -45,8 +45,13 @@ h2 {
   font-size: 25px;
 }
 
+h5 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
 .text-muted {
-  color: $gray4;
+  color: $gray5;
 }
 
 .text-upper {
@@ -57,11 +62,16 @@ h2 {
   text-align: center;
 }
 
+.font-weight-bold {
+  font-weight: bold;
+}
+
 @import "components/container";
 @import "components/forms";
 @import "components/buttons";
 
 @import "shared/header";
+@import "shared/footer";
 
 @import "pages/blog/index";
 @import "pages/blog/detail";

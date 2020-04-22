@@ -17,12 +17,12 @@
   font-weight: bold;
 
   &:hover:not(.disabled)  {
-    background-color: $gray6;
+    background-color: $gray7;
   }
 }
 
 .btn-default {
-  background-color: $gray1;
+  background-color: $gray2;
   color: black;
 
   &:hover:not(.disabled) {

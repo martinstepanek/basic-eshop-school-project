@@ -41,6 +41,11 @@ h2 {
   font-size: 25px;
 }
 
+h5 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
 .text-muted {
   color: #999;
 }
@@ -51,6 +56,10 @@ h2 {
 
 .text-center {
   text-align: center;
+}
+
+.font-weight-bold {
+  font-weight: bold;
 }
 
 .container-fluid {
@@ -231,39 +240,64 @@ header nav a {
   }
 }
 
-.article {
+footer {
+  background-color: #fafafa;
+  margin-top: 40px;
+}
+footer .footer-top {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #999;
+  font-size: 14px;
+}
+footer .footer-bottom {
+  padding: 20px 0;
+}
+footer h5 {
+  margin-bottom: 15px;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  padding: 7px 0;
+}
+
+.blog-index .article {
   margin-bottom: 40px;
 }
-.article .article-image {
+.blog-index .article .article-image {
   height: 200px;
   width: 100%;
   object-fit: cover;
   margin-bottom: 20px;
 }
 @media (min-width: 576px) {
-  .article .article-image {
+  .blog-index .article .article-image {
     height: 260px;
   }
 }
 @media (min-width: 768px) {
-  .article .article-image {
+  .blog-index .article .article-image {
     height: 350px;
   }
 }
 @media (min-width: 992px) {
-  .article .article-image {
+  .blog-index .article .article-image {
     height: 450px;
   }
 }
 @media (min-width: 1200px) {
-  .article .article-image {
+  .blog-index .article .article-image {
     height: 400px;
   }
 }
-.article h2 {
+.blog-index .article h2 {
   margin-bottom: 20px;
 }
-.article .article-info {
+.blog-index .article .article-info {
   padding-bottom: 15px;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 20px;

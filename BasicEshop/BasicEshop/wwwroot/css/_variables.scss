@@ -1,12 +1,14 @@
 $primary: #FF9999;
 $black: #333333;
 
-$gray1: #f0f0f0;
-$gray2: #e0e0e0;
-$gray3: #d9d9d9;
-$gray4: #999;
-$gray5: rgba(255, 255, 255, .17);
-$gray6: #333;
+$gray1: rgb(250, 250, 250);;
+$gray2: #f0f0f0;
+$gray3: #e0e0e0;
+$gray4: #d9d9d9;
+$gray5: #999;
+$gray6: rgba(255, 255, 255, .17);
+$gray7: #333;
+
 
 $grid-breakpoints: (
   xs: 0,

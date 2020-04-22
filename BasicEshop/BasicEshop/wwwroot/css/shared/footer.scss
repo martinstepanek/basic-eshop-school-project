@@ -1,0 +1,30 @@
+footer {
+  background-color: $gray1;
+  margin-top: 40px;
+  
+  .footer-top {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $gray5;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    padding: 20px 0;
+  }
+
+  h5 {
+    margin-bottom: 15px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 7px 0;
+    }
+  }
+
+}
