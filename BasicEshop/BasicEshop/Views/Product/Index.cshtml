@@ -12,38 +12,7 @@
                 @foreach (Product product in ViewBag.Products)
                 {
                     <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="product-preview">
-                            <div class="product-preview-image">
-                                <img alt="@product?.Title" src="@product?.FeaturedImage?.FileName"/>
-                                @if (product?.IsDiscounted == true)
-                                {
-                                    <div class="product-preview-discount">
-                                        -@((int) ((product.PriceOld - product.Price) / (product.PriceOld / 100)))%
-                                    </div>
-                                }
-                                @if (product?.SpecialTag != null)
-                                {
-                                    <div class="product-preview-special-tag">
-                                        @product.SpecialTag
-                                    </div>
-                                }
-                            </div>
-                            <div class="product-preview-info">
-                                <h6>@product?.Title</h6>
-
-                                <div class="product-preview-price">
-                                    <div class="product-preview-price-current">
-                                        $@product?.Price
-                                    </div>
-                                    @if (product?.IsDiscounted == true)
-                                    {
-                                        <div class="product-preview-price-old">
-                                            $@product?.PriceOld
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
+                        @{ Html.RenderPartial("ProductPreview", product); }
                     </div>
                 }
             </div>
@@ -91,8 +60,7 @@
                                 <a
                                     asp-action="Index"
                                     asp-all-route-data="@(UrlHelper.MultiSelection(Model, form => form.SellerIds, seller?.SellerId))"
-                                    class="@(UrlHelper.IsSelected(Model.SellerIds, seller?.SellerId) ? "selected" : "")"
-                                    >
+                                    class="@(UrlHelper.IsSelected(Model.SellerIds, seller?.SellerId) ? "selected" : "")">
                                     <span class="custom-checkbox"></span>
                                     @seller?.Name
                                 </a>

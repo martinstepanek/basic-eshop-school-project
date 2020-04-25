@@ -1,0 +1,35 @@
+@model BasicEshop.Models.Entities.Product
+
+
+<div class="product-preview">
+    <div class="product-preview-image">
+        <img alt="@Model?.Title" src="@Model?.FeaturedImage?.FileName"/>
+        @if (Model?.IsDiscounted == true)
+        {
+            <div class="product-preview-discount">
+                -@((int) ((Model.PriceOld - Model.Price) / (Model.PriceOld / 100)))%
+            </div>
+        }
+        @if (Model?.SpecialTag != null)
+        {
+            <div class="product-preview-special-tag">
+                @Model.SpecialTag
+            </div>
+        }
+    </div>
+    <div class="product-preview-info">
+        <h6>@Model?.Title</h6>
+
+        <div class="product-preview-price">
+            <div class="product-preview-price-current">
+                $@Model?.Price
+            </div>
+            @if (Model?.IsDiscounted == true)
+            {
+                <div class="product-preview-price-old">
+                    $@Model?.PriceOld
+                </div>
+            }
+        </div>
+    </div>
+</div>

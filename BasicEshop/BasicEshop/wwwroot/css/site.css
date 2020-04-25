@@ -98,7 +98,6 @@ h6 {
   padding: 10px 20px;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s ease-out;
 }
 .btn.disabled {
   cursor: default;
@@ -322,6 +321,51 @@ footer ul li {
   border-bottom: 0;
 }
 
+.product-preview {
+  border: 1px solid #d9d9d9;
+  margin-bottom: 20px;
+}
+.product-preview .product-preview-image {
+  background-color: #f8f8f8;
+  position: relative;
+}
+.product-preview .product-preview-image img {
+  object-fit: contain;
+}
+.product-preview .product-preview-image .product-preview-special-tag, .product-preview .product-preview-image .product-preview-discount {
+  position: absolute;
+  top: 20px;
+  background-color: #FF9999;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.product-preview .product-preview-image .product-preview-special-tag {
+  right: 10px;
+}
+.product-preview .product-preview-image .product-preview-discount {
+  left: 10px;
+}
+.product-preview .product-preview-info {
+  padding: 15px 20px;
+}
+.product-preview .product-preview-info .product-preview-price {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+.product-preview .product-preview-info .product-preview-price .product-preview-price-current {
+  color: #FF9999;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.product-preview .product-preview-info .product-preview-price .product-preview-price-old {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+}
+
 .home-about-us {
   margin-top: 50px;
 }
@@ -422,51 +466,6 @@ footer ul li {
 }
 .blog-detail .article-comments .comment p {
   margin: 0;
-}
-
-.product-preview {
-  border: 1px solid #d9d9d9;
-  margin-bottom: 20px;
-}
-.product-preview .product-preview-image {
-  background-color: #f8f8f8;
-  position: relative;
-}
-.product-preview .product-preview-image img {
-  object-fit: contain;
-}
-.product-preview .product-preview-image .product-preview-special-tag, .product-preview .product-preview-image .product-preview-discount {
-  position: absolute;
-  top: 20px;
-  background-color: #FF9999;
-  color: white;
-  padding: 5px 10px;
-  font-size: 12px;
-}
-.product-preview .product-preview-image .product-preview-special-tag {
-  right: 10px;
-}
-.product-preview .product-preview-image .product-preview-discount {
-  left: 10px;
-}
-.product-preview .product-preview-info {
-  padding: 15px 20px;
-}
-.product-preview .product-preview-info .product-preview-price {
-  display: flex;
-  align-items: flex-end;
-  margin-top: 15px;
-}
-.product-preview .product-preview-info .product-preview-price .product-preview-price-current {
-  color: #FF9999;
-  font-weight: bold;
-  font-size: 16px;
-  margin-right: 10px;
-}
-.product-preview .product-preview-info .product-preview-price .product-preview-price-old {
-  text-decoration: line-through;
-  color: #999;
-  font-size: 13px;
 }
 
 /*# sourceMappingURL=site.css.map */
