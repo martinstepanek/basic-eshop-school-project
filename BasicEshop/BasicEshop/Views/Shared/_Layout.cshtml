@@ -1,6 +1,4 @@
-﻿@model BasicEshop.Models.Forms.SearchForm;
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -44,10 +42,7 @@
                     <div class="header-cart-number">0</div>
                 </div>
             </a>
-            @using (Html.BeginForm("Search", "Product", FormMethod.Post))
-            {
-                @Html.TextBoxFor(m => m.Search, new {@class = "form-control search-control", placeholder = "Search our store"})
-            }
+            @* @{Html.RenderPartial("SearchForm");} *@
         </div>
     </div>
     <nav class="container-fluid">
@@ -56,7 +51,7 @@
                 <a asp-controller="Home" asp-action="Index">Home</a>
             </li>
             <li>
-                <a asp-controller="" asp-action="">Products</a>
+                <a asp-controller="Product" asp-action="Index">Products</a>
             </li>
             <li>
                 <a asp-controller="Blog" asp-action="Index">Blog</a>

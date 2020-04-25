@@ -16,10 +16,7 @@
       <_ContentIncludedByDefault Remove="Pages\Blog\Index.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Components\PaginationControl\Default.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Shared\Components\PaginationControl\Default.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Models\Helpers" />
+      <_ContentIncludedByDefault Remove="Pages\Product\Index.cshtml" />
     </ItemGroup>
 
 </Project>

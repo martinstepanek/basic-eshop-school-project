@@ -12,7 +12,7 @@ body {
   box-sizing: border-box;
   font-family: $font-family;
   font-size: 15px;
-  color: $gray7;
+  color: $gray8;
 }
 
 a {
@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 
   &:hover {
+    color: $primary;
+  }
+  
+  &.selected {
     color: $primary;
   }
 }
@@ -50,8 +54,12 @@ h5 {
   font-weight: bold;
 }
 
+h6 {
+  font-size: 15px;
+}
+
 .text-muted {
-  color: $gray5;
+  color: $gray6;
 }
 
 .text-upper {
@@ -69,10 +77,13 @@ h5 {
 @import "components/container";
 @import "components/forms";
 @import "components/buttons";
+@import "components/custom-checkbox";
 
 @import "shared/header";
 @import "shared/footer";
+@import "shared/side-panel";
 
 @import "pages/home/about-us";
 @import "pages/blog/index";
 @import "pages/blog/detail";
+@import "pages/product/index";

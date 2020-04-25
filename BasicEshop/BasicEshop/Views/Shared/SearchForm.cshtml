@@ -1,0 +1,6 @@
+@model BasicEshop.Models.Forms.SearchForm;
+
+@using (Html.BeginForm("Search", "Product", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Search, new {@class = "form-control search-control", placeholder = "Search our store"})
+}

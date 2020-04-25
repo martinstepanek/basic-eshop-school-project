@@ -1,0 +1,24 @@
+.custom-checkbox {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 1px solid $gray5;
+  border-radius: 5px;
+  position: relative;
+  bottom: -2px;
+
+  &.checked {
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+
+  &:hover {
+    background-color: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+a:hover .custom-checkbox, a.selected .custom-checkbox {
+  background-color: $primary;
+  border: 1px solid $primary;
+}
